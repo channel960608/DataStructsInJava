@@ -14,7 +14,8 @@ Step2：
 * Problem  
 Idea导入java项目后无法找到运行按钮，原因在于没有Idea无法定位src源码文件夹  
 Solution:  
-重新设置项目结构，在File>Project Structure中的Source栏下选择源码的目录
+重新设置项目结构，在File>Project Structure中的Source栏下选择src作为代码的Source Folders，并选择apply应用  
+
 
 
 
