@@ -3,7 +3,6 @@ Problems Recording
 #####I met up with some problems during my coding process.So I would record the problems and write down the steps to solving the problems.  
 #####You can learn the Markdown editing from this webside <http://wowubuntu.com/markdown/>  
 >2017.4.15  
-
 项目转移到Idea时产生的编码错误（注：Eclipse转Idea）  
 解决方案：  
 Step1：  
