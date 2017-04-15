@@ -1,4 +1,11 @@
 package structures.linear;
+/**
+ * æœ‰åºåˆ—è¡¨OrderedList
+ * é€šè¿‡äºŒåˆ†æœç´¢binarySearch()è¿›è¡Œæœç´¢
+ * æœ¬ä¾‹å°†ArrayListä½œä¸ºäº†åˆ—è¡¨çš„å®¹å™¨
+ * å½’å¹¶ç±»Mergeæœªå®ç°
+ * 2017.4.15
+ */
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -41,7 +48,7 @@ public class OrderedList<T extends Comparable<T>> {
 	}
 	
 	
-	//Èç¹ûÕÒµ½ÁË£¬Ôò·µ»ØÏÂ±ípos,·ñÔò·µ»ØÒ»¸ö¸ºÊı£¬±íÊ¾Êı¾İÓ¦ÔÚÎ»ÖÃposµÄÏà·´Êı	
+	//å¦‚æœæ‰¾åˆ°äº†ï¼Œåˆ™è¿”å›ä¸‹è¡¨pos,å¦åˆ™è¿”å›ä¸€ä¸ªè´Ÿæ•°ï¼Œè¡¨ç¤ºæ•°æ®åº”åœ¨ä½ç½®posçš„ç›¸åæ•°	
 	public int binarySearch(T item){
 		if(elements.size()==0)
 			return -1;
