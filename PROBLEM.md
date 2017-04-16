@@ -19,7 +19,7 @@ Solution:
 bin目录，这里我新建了一个testbin目录用于test文件输出  
 
 _今天算解决了一个一直让我比较头疼的Eclipse项目导入Idea的问题，以后会把解决方案用在
-Healthy项目上，从muEclipse转移到Idea中来。_   
+Healthy项目上，从myEclipse转移到Idea中来。_   
  
 >2017/4/16  
 
