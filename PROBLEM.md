@@ -21,7 +21,33 @@ bin目录，这里我新建了一个testbin目录用于test文件输出
 _今天算解决了一个一直让我比较头疼的Eclipse项目导入Idea的问题，以后会把解决方案用在
 Healthy项目上，从myEclipse转移到Idea中来。_   
  
->2017/4/16  
+>2017/4/17    
+* Problem
+>测试application.linear.Expense类时 ，Main类入口函数中   
+<code>   
+Calendar cal=Calendar.getInstance();  
+Expense exp=new Expense(Expense.getCalendar("1996/6/8"),100,"赌博");  
+System.out.print(exp.toString());   
+</code>  
+返回的结果  
+1996/00/08	100.00	赌博
+Process finished with exit code 0  
+中间的月份无法正确显示，debug之后发现问题出在SimpleDateFormat类的format()方法中   
+Solution:
+<code>  
+ public static final SimpleDateFormat sdf=new SimpleDateFormat("yyyy/mm/dd");  
+</code>  
+应该改为  
+<code>  
+ public static final SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");  
+ </code>  
+ 没有想到SimpleDateFormat的这个方法在限定格式时区分大小写，而且yyyy/MM/dd通过大小限
+ 限定了返回的Calendar中的具体内容  
+ 另外，发现了Calendar这个日期类中，月份Month是从0开始计算的，同时，一周的第一天是从
+ 周日开始的。
+
+
+
 
 
 
