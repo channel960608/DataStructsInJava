@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
  * ------------------------------------------------------------------------------------
  * 之前调用的是util.LinkedList,在重写了LinkedList类之后，还是采用原有的编码
  */
-public class Queue<T extends Comparable<T>> {
+public class Queue<T> {
     LinkedList<T> list;
     int cursor;
 
@@ -30,7 +30,7 @@ public class Queue<T extends Comparable<T>> {
         return list.removeAt(0);
     }
     public int size(){return list.size();}
-    boolean isEmpty(){return list.isEmpty();}
+    public boolean isEmpty(){return list.isEmpty();}
     int positionOf(T item){return list.indexOf(item);}
     void clear(){list.clear();}
     void remove(T item){list.remove(item);}

@@ -45,6 +45,20 @@ Solution:
  限定了返回的Calendar中的具体内容  
  另外，发现了Calendar这个日期类中，月份Month是从0开始计算的，同时，一周的第一天是从
  周日开始的。
+ 
+>2017.4.21  
+* Problem  
+>Huffman类编写过程中Queue类无法正确声明  
+<code>  
+Queue<BinaryTree<Float>> leaves;  
+</code>  
+Solution:
+原因是当初我对Queue是这样定义的  
+<code>  
+public class Queue<T extends Comparable<T>>   
+</code>  
+这里BinaryTree类不属于可比较的Comparable<T>类型
+结果看了一下书上，确实没有对其进行extends Comparable<T>的定义  
 
 
 
