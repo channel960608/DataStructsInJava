@@ -29,7 +29,51 @@ public class Scheduler{
 
     }
     public void run(int howLong)throws BusyInterruptionException{
+        intervalClock=0;
+        intervalNumProcs=0;
+        intervalThruPut=0;
 
+        while(intervalClock < howLong){
+            //处理时间
+            //时间递增
+            clock++;
+            intervalClock++;
+            cpu.stepTime();
+        }
+
+        Process process = source.getProcess();
+        if(process!=null){
+            process.arrivalTime=clock;
+            procHeap.add(process);
+            intervalNumProcs++;
+            numProcs++;
+        }
+
+        if(cpu.isIdle()){
+            //处理cpu空闲事件
+
+        }
+
+        process=cpu.getProcess();
+        if(process!=null){
+            process.execTime -= cpu.timeSlice;
+            if(process.execTime>0){
+                process.priority--;
+                if(process.priority<0){
+                    process.priority=0;
+                }
+                process.arrivalTime=clock;
+                procHeap.add(process);
+            }else{
+                thruPut++;
+                intervalThruPut++;
+            }
+        }
+
+        if(!procHeap.isEmpty()){
+            Process temp=procHeap.deleteMax();
+            cpu.startUp(temp);
+        }
     }
 
     public void printStatus(PrintWriter pw){
